@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="static/css/style.css" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+  <title>PDF Buster</title>
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">PDF Buster</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-primary text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Welcome to PDF Buster</h1>
+      <p class="lead">Upload a PDF file and choose what to extract from it.</p>
+      <a href="{{ url_for('upload_file') }}" class="btn btn-light btn-lg">Upload PDF</a>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Feature 1 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <i class="fas fa-file-pdf card-img-top fa-5x p-3 text-primary"></i>
+            <div class="card-body">
+              <h5 class="card-title">PDF Image Extractor</h5>
+              <p class="card-text">Extract images from your PDF files with ease.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Feature 2 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <i class="fas fa-cloud card-img-top fa-5x p-3 text-primary"></i>
+            <div class="card-body">
+              <h5 class="card-title">Google Cloud Vision OCR</h5>
+              <p class="card-text">Leverage the power of Google's OCR capabilities.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Feature 3 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <i class="fas fa-table card-img-top fa-5x p-3 text-primary"></i>
+            <div class="card-body">
+            <h5 class="card-title">Table and Text extraction with CSV or Txt output</h5>
+            <p class="card-text">Extract tables and text from your PDF files and output them as CSV and Txt files effortlessly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="static/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+  <script src="static/js/popper.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  -->
+</body>
+
+</html>
