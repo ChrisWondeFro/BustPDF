@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Results</title>
+
+    <!-- jQuery library -->
+  <script src="static/js/jquery-3.7.0.min.prod.js"></script>
+
+    <!-- Bootstrap JS -->
+  <script src="static/js/bootstrap.min.js"></script>
+
+   <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+  <!-- Custom CSS for additional styling -->
+  <style>
+    .download-button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px; /* Adjust the gap between buttons */
+    }
+    .jumbotron {
+      background-color: #f8f9fa; /* Lighter background for the header */
+      border-radius: 10px; /* Rounded corners for the jumbotron */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    }
+  </style>
+    
+</head>
+ 
+<body>
+    <!-- Results container -->
+    <div class="container py-5">
+
+        <!-- Results header -->
+        <div class="jumbotron text-center">
+          <h1 class="display-5">Magnanimous!</h1> 
+          <p class="lead">Your file has been processed successfully. Click the button below to download your results.</p>
+          <hr class="my-4">
+        </div>
+
+        <!-- Button container -->
+        <div class="download-button-container">
+          {% if output_files %}
+            {% for output_file in output_files %}
+              <p>
+                <a href="{{ url_for('download_file', filename=output_file) }}" class="btn btn-lg btn-primary shadow">Download {{ output_file.split('/')[-1] }}</a>
+              </p>
+            {% endfor %}
+          {% else %}
+            <p class="lead">No files were produced in the process.</p>
+          {% endif %}
+        </div>
+
+        <!-- Bottom part with a back to homepage link -->
+        <div class="text-center py-5">
+            <p class="lead">Want to process another file?</p>
+            <a class="btn btn-outline-primary btn-lg" href="{{ url_for('upload_file') }}"><i class="fas fa-undo"></i> Go Back</a>
+        </div>
+    </div>
+
+    <script>
+      $(document).ready(function(){
+        $(".btn").click(function(){
+            alert("Your file is being downloaded.");
+        });
+      });
+    </script>
+  
+</body>
+
+</html>
