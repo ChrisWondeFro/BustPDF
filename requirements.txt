@@ -7,7 +7,7 @@ pandas==2.0.3
 PyMuPDF==1.23.26
 Pillow==9.5.0
 torch==2.2.0
-torchvision==0.15.2
+torchvision==0.17
 tabula-py==2.3.0
 firebase-admin==5.0.3
 joblib==1.2.0
